@@ -1,8 +1,5 @@
 # Dokumentacja stworzenia własnego klastra Kubernetes opartego o K3S
-<p style="text-align:center;">
 [K3S webpage](https://k3s.io)
-</p>
-
 ## 1. Przygotowanie maszyn
 W moim przypadku będą to 2 maszyny wirtualne z systemem Ubuntu oraz z jedną kartą sieciową w trybie Bridge. Oraz podłączymy się do hosta z systemem windows aby móc z niego korzystać z poleceń kubectl oraz abyśmy mogli otworzyć dashboard!
 
