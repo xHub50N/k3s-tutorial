@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-cert
+  namespace: default
+spec:
+  secretName: nginx-cert
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: "*.your.domain"
+  dnsNames:
+    - "your.domain"
+    - "*.your.domain"

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+  run: nginx
+ name: nginx-deploy-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginx-demo
+  template:
+    metadata:
+      labels:
+        run: nginx-demo
+    spec:
+      containers:
+      - name: nginx-demo
+        image: nginx
+        ports:
+          - containerPort: 80
+        volumeMounts:
+        - name: html-demo
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html-demo
+        configMap:
+          name: demo-html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-demo
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: nginx-demo
