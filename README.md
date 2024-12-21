@@ -111,7 +111,7 @@ On the master node, retrieve and copy the contents of the file: `/var/lib/ranche
 
 On the worker node, execute the following command:
 
-```curl -sfL https://get.k3s.io | K3S_URL=https://{adres mastera}:6443 K3S_TOKEN=token sh -```
+```curl -sfL https://get.k3s.io | K3S_URL=https://{master-node-ip}:6443 K3S_TOKEN=token sh -```
 
 ![image](https://github.com/user-attachments/assets/6cbcbaa1-25f0-4942-a427-cae29b4e1c6b)
 
@@ -255,7 +255,7 @@ Later, I'll show how to enable HTTPS communication.
 
 If you have AdGuard Home configured in your home lab, you can use it for DNS rewrites.
 
-If you don't have AdGuard Home, I recommend checking this guide:[Docker home-lab](`https://xhub50n.github.io/DockerHomeLab/`)
+If you don't have AdGuard Home, I recommend checking this guide: [Docker home-lab](`https://xhub50n.github.io/DockerHomeLab/`)
 
 In the Filters > DNS Rewrites tab, add an entry like the one shown below.
 
@@ -385,7 +385,7 @@ As you can see, everything is in order. We still need to add our website to the 
 
 ![alt text](photos/image-7.png)
 
-You can enter the following address in your browser: `http://page.xhub50n.lat/`
+You can enter the following address in your browser: `http://page.{your-domain}/`
 
 ![alt text](photos/image-8.png)
 
